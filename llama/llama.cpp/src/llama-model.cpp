@@ -6279,8 +6279,10 @@ bool llama_model::load_tensors(llama_model_loader & ml) {
                 {
                     tok_embd = create_tensor(tn(LLM_TENSOR_TOKEN_EMBD, "weight"), {n_embd, n_vocab}, 0);
 
-                    output_norm = create_tensor(tn(LLM_TENSOR_OUTPUT_NORM, "weight"), {n_embd}, 0);
-                    output      = create_tensor(tn(LLM_TENSOR_OUTPUT,      "weight"), {n_embd, n_vocab}, TENSOR_NOT_REQUIRED);
+                    // Use token_embd_norm (LLM_TENSOR_OUTPUT_NORM_LFM2) for LFM2 models
+                    // LFM2 GGUF files store the output norm under "token_embd_norm" not "output_norm"
+                    output_norm = create_tensor(tn(LLM_TENSOR_OUTPUT_NORM_LFM2, "weight"), {n_embd}, 0);
+                    output      = create_tensor(tn(LLM_TENSOR_OUTPUT,           "weight"), {n_embd, n_vocab}, TENSOR_NOT_REQUIRED);
 
                     if (output == NULL) {
                         output = create_tensor(tn(LLM_TENSOR_TOKEN_EMBD, "weight"), {n_embd, n_vocab}, TENSOR_DUPLICATED);
