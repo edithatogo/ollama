@@ -2039,6 +2039,7 @@ static std::set<llm_tensor> llm_get_tensor_names(llm_arch arch) {
                 LLM_TENSOR_SHORTCONV_OUTPROJ,
                 LLM_TENSOR_TOKEN_EMBD,
                 LLM_TENSOR_OUTPUT_NORM_LFM2,
+                LLM_TENSOR_DENSE_2_OUT,  // ColBERT late interaction head projection
                 LLM_TENSOR_OUTPUT,
             };
         case LLM_ARCH_LFM2MOE:
