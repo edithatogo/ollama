@@ -1,0 +1,8 @@
+{
+  "track_id": "lfm2_colbert_support_20260516",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-05-15T23:40:59Z",
+  "updated_at": "2026-05-15T23:40:59Z",
+  "description": "Implement native ColBERT support for LFM2-like models in Ollama API and model loading"
+}

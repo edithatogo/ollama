@@ -1,0 +1,8 @@
+{
+  "track_id": "colbert_embed_support_20260513",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-05-13T20:00:00Z",
+  "updated_at": "2026-05-13T20:00:00Z",
+  "description": "Native ColBERT Embedding Model Support for Ollama ecosystem"
+}
