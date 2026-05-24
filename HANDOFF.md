@@ -184,3 +184,10 @@ Current repo checkouts on `/Volumes/PortableSSD/GitHub`:
 | `BitNet-ignore-pr` | `ignore-generated-kernel-headers` | Clean; pushed to `fork/ignore-generated-kernel-headers`; upstream PR #563 open. |
 
 The BitNet wrapper commits are preserved on `local-bitnet-runner-wrapper`; use that branch for local runner work.
+
+Local branch upstreams are configured to the pushed fork branches:
+
+- `ollama:feat/lfm2-embed-output-norm` tracks `fork/feat/lfm2-embed-output-norm`
+- `ollama-conductor-handoff:conductor/colbert-handoff` tracks `fork/conductor/colbert-handoff`
+- `BitNet:local-bitnet-runner-wrapper` tracks `fork/local-bitnet-runner-wrapper`
+- `BitNet-ignore-pr:ignore-generated-kernel-headers` tracks `fork/ignore-generated-kernel-headers`
