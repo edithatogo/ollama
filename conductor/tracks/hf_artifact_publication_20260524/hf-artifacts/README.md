@@ -30,6 +30,7 @@ GitHub remains the source of truth for code, review, branches, and pull requests
 | BitNet local wrapper branch | https://github.com/edithatogo/BitNet/tree/local-bitnet-runner-wrapper |
 | BitNet generated-header ignore PR | https://github.com/microsoft/BitNet/pull/563 |
 | Current publication status | [status.md](./status.md) |
+| Validation evidence | [validation.md](./validation.md) |
 
 ## What This Covers
 
@@ -40,7 +41,7 @@ GitHub remains the source of truth for code, review, branches, and pull requests
 
 ## Local Ollama Validation
 
-The Ollama work is tracked in GitHub. The key validation commands used for the code branch were:
+The Ollama work is tracked in GitHub. See [validation.md](./validation.md) for the current post-rebase validation evidence. The key validation commands used for the code branch were:
 
 ```bash
 go test -count=1 ./cmd ./convert ./parser ./model/models/lfm2 ./llama

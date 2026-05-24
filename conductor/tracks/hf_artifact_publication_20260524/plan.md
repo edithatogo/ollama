@@ -133,3 +133,17 @@ Automation upload commit:
 - `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/11abba164a530cc3f7ab6ca034cf71faf5aa8006`
 - Stable metadata wording upload commit:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/6408328ee6407dc42091a269281574cb9dd11c64`
+
+## Phase 10: Validation Evidence Page
+
+- [x] Task: Add `validation.md`
+    - [x] Record Ollama PR head and rebase base
+    - [x] Record focused validation command
+    - [x] Record broad non-app validation command
+    - [x] Record BitNet PR freshness and CLA check
+    - [x] Record docs-only HF publication policy
+    - [x] Upload validation page to Hugging Face
+
+Validation page upload commit:
+
+- `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/b2281f1b1c362e42a3d34546bd0ee55fe496e81f`

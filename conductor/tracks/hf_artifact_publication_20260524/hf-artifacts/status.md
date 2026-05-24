@@ -26,6 +26,7 @@ Last checked: 2026-05-24
 - `artifact-manifest.md`
 - `github-links.md`
 - `status.md`
+- `validation.md`
 
 No model weights, GGUF files, generated binaries, or third-party artifacts are uploaded here.
 
