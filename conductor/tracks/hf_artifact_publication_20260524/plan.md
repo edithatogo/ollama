@@ -70,4 +70,25 @@
     - `github-links.md`
 - Verified by downloading the three uploaded Markdown files to `/tmp/ollama-colbert-local-artifacts-verify`.
 - No model weights, GGUF files, or generated binaries were uploaded.
-- Repo remains private until third-party license/provenance review and wording review are complete.
+- Repo was later made public after documentation-only contents and source metadata were verified.
+
+## Phase 6: Public Documentation Release
+
+- [x] Task: Check source model metadata before making docs public
+    - [x] `LiquidAI/LFM2-ColBERT-350M`: public, ungated, `license:other`, sha `0c31032e995fe698f3ddd74f0ddb566cfd3d4d5a`
+    - [x] `microsoft/bitnet-b1.58-2B-4T`: public, ungated, `license:mit`, sha `04c3b9ad9361b824064a1f25ea60a8be9599b127`
+- [x] Task: Publish documentation-only Hugging Face repo
+    - [x] Upload updated provenance wording
+    - [x] Set repo visibility to public
+    - [x] Verify remote metadata reports `private: false`
+
+## Public Release Notes
+
+- Updated provenance commit: `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/421e4a3002e372ecd029cff2628c4618c6925da7`
+- Public repo URL: `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts`
+- Verified remote metadata:
+    - `private: false`
+    - `gated: false`
+    - `sha: 421e4a3002e372ecd029cff2628c4618c6925da7`
+    - files: `.gitattributes`, `README.md`, `artifact-manifest.md`, `github-links.md`
+- No model weights, GGUF files, or generated binaries were uploaded.

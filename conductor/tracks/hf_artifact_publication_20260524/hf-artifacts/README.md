@@ -17,7 +17,7 @@ This repository tracks local artifact notes for Ollama ColBERT and related BitNe
 
 ## Status
 
-Experimental handoff repository for local validation and artifact planning.
+Experimental public handoff repository for local validation and artifact planning.
 
 GitHub remains the source of truth for code, review, branches, and pull requests. Hugging Face is used here for model-facing notes, artifact manifests, and future model-card context.
 
@@ -72,6 +72,15 @@ This repository does not redistribute:
 
 Those artifacts should only be uploaded after source license, redistribution permissions, and provenance are reviewed and documented in `artifact-manifest.md`.
 
+## Source Model Metadata Checked
+
+The source model metadata was checked on 2026-05-24 before publication:
+
+| Source model | Hugging Face metadata | Publication decision here |
+| --- | --- | --- |
+| `LiquidAI/LFM2-ColBERT-350M` | `license:other`, public, ungated, sha `0c31032e995fe698f3ddd74f0ddb566cfd3d4d5a` | Reference only; no weights or derived GGUF uploaded. |
+| `microsoft/bitnet-b1.58-2B-4T` | `license:mit`, public, ungated, sha `04c3b9ad9361b824064a1f25ea60a8be9599b127` | Reference only; no weights or derived GGUF uploaded. |
+
 ## Recommended Use
 
 Use this repository as a model-facing index for the GitHub work:
@@ -79,4 +88,3 @@ Use this repository as a model-facing index for the GitHub work:
 1. Follow the GitHub PRs for source changes.
 2. Use this Hugging Face repo for artifact status and usage notes.
 3. Add GGUF/model files only after license and provenance checks are complete.
-
