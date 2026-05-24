@@ -16,7 +16,7 @@ Last checked: 2026-05-24
 | Repo | `edithatogo/ollama-colbert-local-artifacts` |
 | Visibility | Public |
 | Gated | False |
-| Current commit | `421e4a3002e372ecd029cff2628c4618c6925da7` |
+| Current commit | See the Hugging Face repository commit history for the latest revision. |
 | Content policy | Documentation only |
 
 ## Uploaded Files
@@ -28,4 +28,3 @@ Last checked: 2026-05-24
 - `status.md`
 
 No model weights, GGUF files, generated binaries, or third-party artifacts are uploaded here.
-

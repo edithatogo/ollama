@@ -104,3 +104,5 @@
 Status page upload commit:
 
 - `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/3ff2608dd33b3af8f80776b33e46f9f7ac292ff7`
+- Follow-up commit removed the self-referential current-commit row from `status.md` because uploading the file necessarily changes the latest HF commit:
+  `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/1c152a60ff4418172d0f2f49aa73fcc293a57a18`
