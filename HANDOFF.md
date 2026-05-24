@@ -9,6 +9,7 @@ Current pushed head:
 - `c0f56ec5e17c70da0d0dd213369b608d7ece66d5`
 - Rebasing note: branch was rebased onto `ollama/ollama@275f122cd` on 2026-05-24 and force-pushed with lease.
 - Local safety branch before rebase: `backup/feat-lfm2-embed-output-norm-pre-rebase`
+- Post-rebase validation comment: https://github.com/ollama/ollama/pull/16195#issuecomment-4528401509
 
 Upstream Ollama PR:
 
@@ -135,6 +136,16 @@ Post-rebase focused validation passed on 2026-05-24:
 
 ```bash
 go test -count=1 ./cmd ./convert ./parser ./model/models/lfm2 ./llama
+```
+
+Post-rebase broad non-app package sweep also passed on 2026-05-24:
+
+```bash
+find . -name '*.go' \
+  -not -path './app/*' \
+  -not -path './integration/*' \
+  -not -path './.git/*' \
+  -exec dirname {} \; | sort -u | sed 's#^\./#./#' | xargs go test -count=1
 ```
 
 ## Hugging Face Artifact Track
