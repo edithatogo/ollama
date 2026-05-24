@@ -171,3 +171,16 @@ Current source metadata checks:
 - Handoff branch: `edithatogo/ollama` on branch `conductor/colbert-handoff`
 - Hugging Face docs repo: https://huggingface.co/edithatogo/ollama-colbert-local-artifacts
 - Upstream llama.cpp: https://github.com/ggml-org/llama.cpp (vendored at commit ec98e2002)
+
+## Local Branch Hygiene
+
+Current repo checkouts on `/Volumes/PortableSSD/GitHub`:
+
+| Checkout | Branch | State |
+| --- | --- | --- |
+| `ollama` | `feat/lfm2-embed-output-norm` | Clean; pushed to `fork/feat/lfm2-embed-output-norm`; upstream PR #16195 open. |
+| `ollama-conductor-handoff` | `conductor/colbert-handoff` | Clean; pushed to `fork/conductor/colbert-handoff`; contains Conductor tracks and HF docs. |
+| `BitNet` | `main` | Clean but ahead of `origin/main` by two fork-only commits; same tip is preserved as local branch `local-bitnet-runner-wrapper` and pushed to `fork/local-bitnet-runner-wrapper`. |
+| `BitNet-ignore-pr` | `ignore-generated-kernel-headers` | Clean; pushed to `fork/ignore-generated-kernel-headers`; upstream PR #563 open. |
+
+Do not reset `BitNet/main` unless explicitly requested. The commits are preserved, but rewriting `main` should be a deliberate local-cleanup step.
