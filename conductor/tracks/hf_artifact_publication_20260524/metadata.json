@@ -1,0 +1,10 @@
+{
+  "track_id": "hf_artifact_publication_20260524",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-05-24T09:03:05Z",
+  "updated_at": "2026-05-24T09:03:05Z",
+  "description": "Create a Hugging Face repository and artifact plan for Ollama ColBERT and BitNet work without replacing GitHub as the code review source of truth",
+  "handoff": true
+}
+
