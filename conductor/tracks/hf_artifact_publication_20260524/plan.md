@@ -92,3 +92,15 @@
     - `sha: 421e4a3002e372ecd029cff2628c4618c6925da7`
     - files: `.gitattributes`, `README.md`, `artifact-manifest.md`, `github-links.md`
 - No model weights, GGUF files, or generated binaries were uploaded.
+
+## Phase 7: Status Index
+
+- [x] Task: Add public status page
+    - [x] Record Ollama PR state
+    - [x] Record BitNet PR state
+    - [x] Record HF visibility and docs-only policy
+    - [x] Upload `status.md` to Hugging Face
+
+Status page upload commit:
+
+- `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/3ff2608dd33b3af8f80776b33e46f9f7ac292ff7`

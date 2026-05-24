@@ -29,6 +29,7 @@ GitHub remains the source of truth for code, review, branches, and pull requests
 | Ollama handoff branch | https://github.com/edithatogo/ollama/tree/conductor/colbert-handoff |
 | BitNet local wrapper branch | https://github.com/edithatogo/BitNet/tree/local-bitnet-runner-wrapper |
 | BitNet generated-header ignore PR | https://github.com/microsoft/BitNet/pull/563 |
+| Current publication status | [status.md](./status.md) |
 
 ## What This Covers
 
