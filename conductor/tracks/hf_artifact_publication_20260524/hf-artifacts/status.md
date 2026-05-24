@@ -6,8 +6,8 @@ Last checked: 2026-05-24
 
 | Repository | PR | Branch | State | Mergeable | Checks |
 | --- | --- | --- | --- | --- | --- |
-| `ollama/ollama` | [`#16195`](https://github.com/ollama/ollama/pull/16195) | `feat/lfm2-embed-output-norm` | Open | Yes | No status checks reported by GitHub. |
-| `microsoft/BitNet` | [`#563`](https://github.com/microsoft/BitNet/pull/563) | `ignore-generated-kernel-headers` | Open | Yes | `license/cla` passed. |
+| `ollama/ollama` | [`#16195`](https://github.com/ollama/ollama/pull/16195) | `feat/lfm2-embed-output-norm` | OPEN | Yes | No status checks reported by GitHub. |
+| `microsoft/BitNet` | [`#563`](https://github.com/microsoft/BitNet/pull/563) | `ignore-generated-kernel-headers` | OPEN | Yes | license/cla: SUCCESS |
 
 ## Hugging Face Repository
 
@@ -15,8 +15,8 @@ Last checked: 2026-05-24
 | --- | --- |
 | Repo | `edithatogo/ollama-colbert-local-artifacts` |
 | Visibility | Public |
-| Gated | False |
-| Current commit | See the Hugging Face repository commit history for the latest revision. |
+| Gated | false |
+| Latest commit | See the Hugging Face repository commit history for the latest revision. |
 | Content policy | Documentation only |
 
 ## Uploaded Files
@@ -31,24 +31,14 @@ No model weights, GGUF files, generated binaries, or third-party artifacts are u
 
 ## Refresh Commands
 
-Use these commands from a machine with `gh` and `hf` authenticated as the repository owner:
+Use this script from the Conductor handoff branch:
 
 ```bash
-gh pr view 16195 --repo ollama/ollama \
-  --json title,url,state,mergeable,statusCheckRollup,headRefName
-
-gh pr view 563 --repo microsoft/BitNet \
-  --json title,url,state,mergeable,statusCheckRollup,headRefName
-
-hf models info edithatogo/ollama-colbert-local-artifacts
+conductor/tracks/hf_artifact_publication_20260524/refresh-status.sh
 ```
 
-After editing this page locally, upload the documentation-only folder:
+To regenerate and upload the documentation-only status page:
 
 ```bash
-hf upload edithatogo/ollama-colbert-local-artifacts \
-  conductor/tracks/hf_artifact_publication_20260524/hf-artifacts \
-  . \
-  --repo-type model \
-  --commit-message "Refresh publication status"
+conductor/tracks/hf_artifact_publication_20260524/refresh-status.sh --upload
 ```

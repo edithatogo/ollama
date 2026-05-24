@@ -118,3 +118,18 @@ Status page upload commit:
 Refresh commands upload commit:
 
 - `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/96a4e104a9c99be9c4ae14a5c193622660c505fe`
+
+## Phase 9: Status Refresh Automation
+
+- [x] Task: Add refresh script
+    - [x] Query Ollama PR status with `gh`
+    - [x] Query BitNet PR status with `gh`
+    - [x] Query Hugging Face repo metadata with `hf`
+    - [x] Regenerate `hf-artifacts/status.md`
+    - [x] Upload regenerated status page
+
+Automation upload commit:
+
+- `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/11abba164a530cc3f7ab6ca034cf71faf5aa8006`
+- Stable metadata wording upload commit:
+  `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/6408328ee6407dc42091a269281574cb9dd11c64`
