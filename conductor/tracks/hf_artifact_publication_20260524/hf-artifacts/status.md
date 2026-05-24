@@ -28,3 +28,27 @@ Last checked: 2026-05-24
 - `status.md`
 
 No model weights, GGUF files, generated binaries, or third-party artifacts are uploaded here.
+
+## Refresh Commands
+
+Use these commands from a machine with `gh` and `hf` authenticated as the repository owner:
+
+```bash
+gh pr view 16195 --repo ollama/ollama \
+  --json title,url,state,mergeable,statusCheckRollup,headRefName
+
+gh pr view 563 --repo microsoft/BitNet \
+  --json title,url,state,mergeable,statusCheckRollup,headRefName
+
+hf models info edithatogo/ollama-colbert-local-artifacts
+```
+
+After editing this page locally, upload the documentation-only folder:
+
+```bash
+hf upload edithatogo/ollama-colbert-local-artifacts \
+  conductor/tracks/hf_artifact_publication_20260524/hf-artifacts \
+  . \
+  --repo-type model \
+  --commit-message "Refresh publication status"
+```
