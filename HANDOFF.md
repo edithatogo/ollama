@@ -1,33 +1,60 @@
-# LFM2-ColBERT-350M Integration — Handoff Document
+# LFM2-ColBERT-350M Integration - Handoff Document
 
 ## Current State
 
-Two C++ changes have been committed and pushed to `edithatogo/ollama` on branch `feat/lfm2-embed-output-norm`:
+The current upstream code-review branch is `edithatogo/ollama:feat/lfm2-embed-output-norm`.
 
-### Change 1: Tensor Name Fix (PR #16195)
+Upstream Ollama PR:
+
+- https://github.com/ollama/ollama/pull/16195
+- Title: `lfm2: support ColBERT embedding models`
+- State: open
+
+The PR now covers the broader LFM2/ColBERT conversion and runtime path, not just the original two C++ tensor-loading fixes.
+
+It includes:
+
+- LFM2 embedding model registration for `lfm2_embed` and `lfm2moe_embed`
+- SentenceTransformers `modules.json` parsing for pooling, normalization, and dense projection metadata
+- nested safetensors discovery and tensor-name prefixing for module subdirectories such as `1_Dense/model.safetensors`
+- upload path preservation for directory-structured model inputs
+- optional LFM2 dense projection loading/application for ColBERT-style embedding heads
+- documentation for LFM2-ColBERT embedding behavior
+
+The original low-level fixes were:
+
+### Change 1: Tensor Name Fix
 - **File**: `llama/llama.cpp/src/llama-model.cpp`
 - **Change**: Line 6284: `LLM_TENSOR_OUTPUT_NORM` → `LLM_TENSOR_OUTPUT_NORM_LFM2`
 - **Purpose**: The LFM2 GGUF model stores its output norm tensor as `token_embd_norm.weight`. The llama.cpp loading code was looking for `output_norm.weight`. The `LLM_TENSOR_OUTPUT_NORM_LFM2` enum already existed (mapped to `"token_embd_norm"`) but was never wired up.
 - **Verification**: Error changed from `missing tensor 'output_norm'` → `done_getting_tensors: expected 149, got 148`
-- **Status**: PR https://github.com/ollama/ollama/pull/16195 — OPEN, awaiting review
+- **Status**: included in PR https://github.com/ollama/ollama/pull/16195
 
 ### Change 2: DENSE_2_OUT Added to Expected List
 - **File**: `llama/llama.cpp/src/llama-arch.cpp`
 - **Change**: Added `LLM_TENSOR_DENSE_2_OUT` to the LFM2 architecture's expected tensor list
 - **Purpose**: The ColBERT model has a late interaction head projection tensor `dense_2.weight` that is not in the standard LFM2 expected tensor list. This causes `done_getting_tensors: expected 149, got 148`
 - **Note**: `LLM_TENSOR_DENSE_2_OUT` already maps to `"dense_2"` and is used by other architectures (e.g., `GEMMA_EMBEDDING`)
-- **Status**: Committed to fork, NOT yet submitted as a separate PR
+- **Status**: included in PR https://github.com/ollama/ollama/pull/16195
 
 ## Repository Structure
 
 ```
-/Users/doughnut/GitHub/ollama/
+/Volumes/PortableSSD/GitHub/ollama/
   ├── .git/
   ├── llama/llama.cpp/src/
-  │   ├── llama-model.cpp      # Modified (tensor name fix)
-  │   └── llama-arch.cpp       # Modified (DENSE_2_OUT addition)
-  └── HANDOFF.md               # This file
+  ├── cmd/
+  ├── convert/
+  ├── docs/
+  ├── model/models/lfm2/
+  └── parser/
+
+/Volumes/PortableSSD/GitHub/ollama-conductor-handoff/
+  ├── HANDOFF.md
+  └── conductor/
 ```
+
+The active upstream PR branch should stay focused on code and docs intended for Ollama review. Conductor planning material is kept separately on `edithatogo/ollama:conductor/colbert-handoff`.
 
 ## Build Artifacts
 
@@ -71,7 +98,7 @@ Two C++ changes have been committed and pushed to `edithatogo/ollama` on branch 
 
 ```bash
 # 1. Build from source (if needed)
-cd /Users/doughnut/GitHub/ollama
+cd /Volumes/PortableSSD/GitHub/ollama
 go clean -cache
 go build -a -o /tmp/ollama-new .
 
@@ -85,6 +112,42 @@ curl http://localhost:11434/api/embed -d '{
   "input": "Hello world"
 }'
 ```
+
+Current validation already run for the upstream PR branch:
+
+```bash
+go test -count=1 ./cmd ./convert ./parser ./model/models/lfm2 ./llama
+find . -name '*.go' \
+  -not -path './app/*' \
+  -not -path './integration/*' \
+  -not -path './.git/*' \
+  -exec dirname {} \; | sort -u | sed 's#^\./#./#' | xargs go test -count=1
+```
+
+## Hugging Face Artifact Track
+
+Public documentation-only Hugging Face repo:
+
+- https://huggingface.co/edithatogo/ollama-colbert-local-artifacts
+- Current HF commit: `421e4a3002e372ecd029cff2628c4618c6925da7`
+- Visibility: public
+- Gated: false
+- Files: `.gitattributes`, `README.md`, `artifact-manifest.md`, `github-links.md`
+
+No model weights, GGUF files, or generated binaries were uploaded.
+
+Purpose:
+
+- Keep GitHub as the source of truth for code, PRs, branches, and review.
+- Use Hugging Face as the model-facing artifact index, provenance log, and future publication surface.
+- Record candidate artifacts and block third-party or derived model uploads until license/provenance checks are complete.
+
+Current source metadata checks:
+
+| Source model | Metadata snapshot | Decision |
+| --- | --- | --- |
+| `LiquidAI/LFM2-ColBERT-350M` | public, ungated, `license:other`, sha `0c31032e995fe698f3ddd74f0ddb566cfd3d4d5a` | Reference only; no weights or derived GGUF uploaded. |
+| `microsoft/bitnet-b1.58-2B-4T` | public, ungated, `license:mit`, sha `04c3b9ad9361b824064a1f25ea60a8be9599b127` | Reference only; no weights or derived GGUF uploaded. |
 
 ## Key Files to Edit Next
 
@@ -100,4 +163,6 @@ curl http://localhost:11434/api/embed -d '{
 
 - PR #16195: https://github.com/ollama/ollama/pull/16195
 - Fork: `edithatogo/ollama` on branch `feat/lfm2-embed-output-norm`
+- Handoff branch: `edithatogo/ollama` on branch `conductor/colbert-handoff`
+- Hugging Face docs repo: https://huggingface.co/edithatogo/ollama-colbert-local-artifacts
 - Upstream llama.cpp: https://github.com/ggml-org/llama.cpp (vendored at commit ec98e2002)
