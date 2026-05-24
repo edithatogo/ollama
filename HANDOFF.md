@@ -208,6 +208,13 @@ Current repo checkouts on `/Volumes/PortableSSD/GitHub`:
 
 The BitNet wrapper commits are preserved on `local-bitnet-runner-wrapper`; use that branch for local runner work.
 
+BitNet PR branch freshness check on 2026-05-24:
+
+- `ignore-generated-kernel-headers` is based on current `microsoft/BitNet:main`
+- Branch is one commit ahead of `origin/main`
+- PR #563 is open and mergeable
+- `license/cla` check is passing
+
 Local branch upstreams are configured to the pushed fork branches:
 
 - `ollama:feat/lfm2-embed-output-norm` tracks `fork/feat/lfm2-embed-output-norm`
