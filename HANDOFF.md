@@ -4,6 +4,12 @@
 
 The current upstream code-review branch is `edithatogo/ollama:feat/lfm2-embed-output-norm`.
 
+Current pushed head:
+
+- `c0f56ec5e17c70da0d0dd213369b608d7ece66d5`
+- Rebasing note: branch was rebased onto `ollama/ollama@275f122cd` on 2026-05-24 and force-pushed with lease.
+- Local safety branch before rebase: `backup/feat-lfm2-embed-output-norm-pre-rebase`
+
 Upstream Ollama PR:
 
 - https://github.com/ollama/ollama/pull/16195
@@ -125,6 +131,12 @@ find . -name '*.go' \
   -exec dirname {} \; | sort -u | sed 's#^\./#./#' | xargs go test -count=1
 ```
 
+Post-rebase focused validation passed on 2026-05-24:
+
+```bash
+go test -count=1 ./cmd ./convert ./parser ./model/models/lfm2 ./llama
+```
+
 ## Hugging Face Artifact Track
 
 Public documentation-only Hugging Face repo:
@@ -178,7 +190,7 @@ Current repo checkouts on `/Volumes/PortableSSD/GitHub`:
 
 | Checkout | Branch | State |
 | --- | --- | --- |
-| `ollama` | `feat/lfm2-embed-output-norm` | Clean; pushed to `fork/feat/lfm2-embed-output-norm`; upstream PR #16195 open. |
+| `ollama` | `feat/lfm2-embed-output-norm` | Clean; pushed to `fork/feat/lfm2-embed-output-norm` at `c0f56ec5e`; rebased onto current `origin/main`; upstream PR #16195 open and mergeable. |
 | `ollama-conductor-handoff` | `conductor/colbert-handoff` | Clean; pushed to `fork/conductor/colbert-handoff`; contains Conductor tracks and HF docs. |
 | `BitNet` | `local-bitnet-runner-wrapper` | Clean; points at the two fork-only local runner commits and is pushed to `fork/local-bitnet-runner-wrapper`. Local `main` has been restored to track `origin/main`. |
 | `BitNet-ignore-pr` | `ignore-generated-kernel-headers` | Clean; pushed to `fork/ignore-generated-kernel-headers`; upstream PR #563 open. |
