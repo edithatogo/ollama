@@ -9,6 +9,7 @@ Upstream Ollama PR:
 - https://github.com/ollama/ollama/pull/16195
 - Title: `lfm2: support ColBERT embedding models`
 - State: open
+- Reviewer artifact note: https://github.com/ollama/ollama/pull/16195#issuecomment-4527936929
 
 The PR now covers the broader LFM2/ColBERT conversion and runtime path, not just the original two C++ tensor-loading fixes.
 
@@ -135,6 +136,10 @@ Public documentation-only Hugging Face repo:
 - Files: `.gitattributes`, `README.md`, `artifact-manifest.md`, `github-links.md`
 
 No model weights, GGUF files, or generated binaries were uploaded.
+
+The HF docs link was also added as a reviewer-facing comment on the Ollama PR:
+
+- https://github.com/ollama/ollama/pull/16195#issuecomment-4527936929
 
 Purpose:
 
