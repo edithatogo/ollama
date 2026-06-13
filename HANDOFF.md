@@ -11,7 +11,7 @@ Current pushed head:
 - Local safety branch before rebase: `backup/feat-lfm2-embed-output-norm-pre-rebase`
 - Local safety branch before June 14 rebase: `backup/feat-lfm2-embed-output-norm-pre-rebase-20260614`
 - Post-rebase validation comment: https://github.com/ollama/ollama/pull/16195#issuecomment-4698915854
-- PR body was updated on 2026-06-14 to match the current one-commit conversion/docs diff and remove stale runtime-file claims.
+- PR body was updated on 2026-06-14 to match the current one-commit conversion/docs diff, remove stale runtime-file claims, and record the amended validated head plus validation rerun note.
 - The older May 24 validation comment was edited on 2026-06-14 to mark it superseded and point reviewers to the June 14 validation comment.
 
 Upstream Ollama PR:

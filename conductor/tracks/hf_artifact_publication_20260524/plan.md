@@ -158,3 +158,4 @@ Validation page upload commit:
 - June 14 PR cleanup: amended the Ollama PR head to `4cb8d65b58e4a4c6f33793bb06a49fe5844c0578` with an `fs.FS` path fix, conservative LFM2-ColBERT docs wording, focused validation, isolated `./llm` rerun, and a passing second broad non-app sweep.
 - June 14 validation upload for amended PR head:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/34241c2501e5fb7e7416322407f84b7705ebb013`
+- June 14 PR body refresh: updated the upstream PR body to list amended head `4cb8d65b58e4a4c6f33793bb06a49fe5844c0578` and the validation rerun note.
