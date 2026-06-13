@@ -133,6 +133,7 @@ Automation upload commit:
 - `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/11abba164a530cc3f7ab6ca034cf71faf5aa8006`
 - Stable metadata wording upload commit:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/6408328ee6407dc42091a269281574cb9dd11c64`
+- June 14 maintenance fix: `refresh-status.sh` now uses local date instead of UTC date so the public status page matches the Australia/Sydney working context.
 
 ## Phase 10: Validation Evidence Page
 

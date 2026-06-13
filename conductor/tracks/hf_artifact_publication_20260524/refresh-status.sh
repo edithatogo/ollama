@@ -80,7 +80,7 @@ else
   hf_visibility="Private"
 fi
 
-today="$(date -u +%Y-%m-%d)"
+today="$(date +%Y-%m-%d)"
 
 {
   cat <<EOF
