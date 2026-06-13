@@ -66,6 +66,16 @@ bin/bitnet "Say ok" -n 1 -c 128 -temp 0
 
 The upstream-suitable generated-header ignore change was split into a separate Microsoft BitNet pull request.
 
+## Local Apple MLX Notes
+
+Apple MLX is available locally through a dedicated virtualenv at `/Volumes/PortableSSD/GitHub/.venvs/mlx-lm`. The verified packages are `mlx==0.31.2` and `mlx-lm==0.31.3`, with MLX selecting `Device(gpu, 0)` on this machine.
+
+Example local CLI check:
+
+```bash
+/Volumes/PortableSSD/GitHub/.venvs/mlx-lm/bin/python -m mlx_lm --help
+```
+
 ## Artifact Policy
 
 This repository does not redistribute:

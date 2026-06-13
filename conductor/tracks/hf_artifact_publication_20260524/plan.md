@@ -166,3 +166,7 @@ Validation page upload commit:
 - June 14 PR cleanup: amended the Ollama PR head to `8d61f89f80b33a95e5669af3a8b7126b9c5df4ab` to remove the now-unused extra tensor parser hook after focused and broad validation passed.
 - June 14 validation upload for extra tensor parser cleanup:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/ec653daae11a31ceda51fb1f6c274fea825d951f`
+- June 14 local runtime README upload for Apple MLX and BitNet checks:
+  `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/631328667ca84ada77be0c936d02fa82ec7cf62d`
+- June 14 local runtime validation upload for Apple MLX and BitNet checks:
+  `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/b37ae2a91a573ad90ab58babd78e554d30b89bf3`

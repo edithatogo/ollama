@@ -164,7 +164,7 @@ Post-June-14 broad non-app package sweep also passed with the same command.
 Public documentation-only Hugging Face repo:
 
 - https://huggingface.co/edithatogo/ollama-colbert-local-artifacts
-- Current HF commit: `ec653daae11a31ceda51fb1f6c274fea825d951f`
+- Current HF commit: `b37ae2a91a573ad90ab58babd78e554d30b89bf3`
 - Visibility: public
 - Gated: false
 - Files: `.gitattributes`, `README.md`, `artifact-manifest.md`, `github-links.md`, `status.md`, `validation.md`
@@ -187,6 +187,26 @@ Current source metadata checks:
 | --- | --- | --- |
 | `LiquidAI/LFM2-ColBERT-350M` | public, ungated, `license:other`, sha `0c31032e995fe698f3ddd74f0ddb566cfd3d4d5a` | Reference only; no weights or derived GGUF uploaded. |
 | `microsoft/bitnet-b1.58-2B-4T` | public, ungated, `license:mit`, sha `04c3b9ad9361b824064a1f25ea60a8be9599b127` | Reference only; no weights or derived GGUF uploaded. |
+
+## Local Runtime Options
+
+Apple MLX and Microsoft BitNet are available as separate local runtime lanes. They are not part of the current Ollama upstream PR diff.
+
+Apple MLX verification on 2026-06-14:
+
+- Virtualenv: `/Volumes/PortableSSD/GitHub/.venvs/mlx-lm`
+- Python: `3.14.5`
+- `mlx`: `0.31.2`
+- `mlx-lm`: `0.31.3`
+- Default MLX device: `Device(gpu, 0)`
+- CLI verified with: `/Volumes/PortableSSD/GitHub/.venvs/mlx-lm/bin/python -m mlx_lm --help`
+
+Microsoft BitNet verification on 2026-06-14:
+
+- Checkout: `/Volumes/PortableSSD/GitHub/BitNet`
+- Wrapper branch: `local-bitnet-runner-wrapper`
+- Executable wrapper: `/Volumes/PortableSSD/GitHub/BitNet/bin/bitnet`
+- CLI verified with: `/Volumes/PortableSSD/GitHub/BitNet/bin/bitnet --help`
 
 ## Key Files to Edit Next
 
@@ -215,7 +235,7 @@ Current repo checkouts on `/Volumes/PortableSSD/GitHub`:
 
 The BitNet wrapper commits are preserved on `local-bitnet-runner-wrapper`; use that branch for local runner work.
 
-BitNet PR branch freshness check on 2026-05-24:
+BitNet PR branch freshness check on 2026-06-14:
 
 - `ignore-generated-kernel-headers` is based on current `microsoft/BitNet:main`
 - Branch is one commit ahead of `origin/main`

@@ -79,6 +79,24 @@ Checks:
 - Branch is one commit ahead of `origin/main`.
 - GitHub reported the PR as open and mergeable.
 - `license/cla` check passed.
+- Local wrapper binary `/Volumes/PortableSSD/GitHub/BitNet/bin/bitnet` is executable and responds to `--help`.
+
+## Apple MLX Local Runtime
+
+Verified on 2026-06-14:
+
+```text
+python: 3.14.5
+mlx: 0.31.2
+mlx-lm: 0.31.3
+mlx device: Device(gpu, 0)
+```
+
+CLI check:
+
+```bash
+/Volumes/PortableSSD/GitHub/.venvs/mlx-lm/bin/python -m mlx_lm --help
+```
 
 ## Hugging Face Publication
 
