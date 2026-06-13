@@ -1,5 +1,28 @@
 # Interface Contracts
 
+## Current Contract: Conversion Inputs
+
+### Provider: Ollama converter (`convert/*`)
+### Consumer: LFM2-ColBERT style SentenceTransformers checkpoints
+
+```
+Preconditions:
+  - Checkpoint uses an LFM2 model family supported by the converter.
+  - SentenceTransformers metadata may include modules.json.
+  - Dense projection weights may live in nested module paths such as 1_Dense/model.safetensors.
+
+Postconditions:
+  - The converter preserves directory-structured model inputs.
+  - Nested safetensors are discovered and parsed.
+  - Nested dense module tensor names are rewritten to the expected GGUF tensor names.
+  - Pooling, normalization, and dense projection metadata are emitted when present.
+
+Validation:
+  go test -count=1 ./cmd ./convert ./parser
+```
+
+The contracts below are historical runtime contracts from the earlier branch shape. They are retained for future runtime work but are not part of the current June 14 conversion/docs PR diff.
+
 ## Contract C-01: Tensor Name Resolution
 
 ### Provider: llama.cpp model loader (`llama-model.cpp`)

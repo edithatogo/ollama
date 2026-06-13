@@ -1,5 +1,16 @@
 # Design Document — Mermaid Diagrams
 
+## Current Design Scope
+
+As of the June 14 refresh, the active upstream PR design surface is the Ollama converter and embedding documentation:
+
+- LFM2-ColBERT conversion registration.
+- SentenceTransformers `modules.json` parsing.
+- nested safetensors discovery and tensor-name prefixing.
+- dense projection metadata handling for ColBERT-style embedding heads.
+
+The diagrams below document the earlier runtime/GGUF investigation and should be treated as historical/deferred context unless a new runtime track is opened.
+
 ## Architecture Overview
 
 ```mermaid

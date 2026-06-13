@@ -1,21 +1,41 @@
 {
   "track_id": "colbert-ollama-20260519",
   "name": "LFM2-ColBERT-350M Ollama Integration",
-  "status": "in_progress",
+  "status": "in_upstream_review",
   "created": "2026-05-19T20:00:00+10:00",
-  "updated": "2026-05-20T00:30:00+10:00",
+  "updated": "2026-06-14T00:00:00+10:00",
   "owner": "edithatogo",
   "handoff": true,
   "repository": "edithatogo/ollama",
   "branch": "feat/lfm2-embed-output-norm",
-  "base_commit": "42e6f56c2abe0677738f91319c27d3a702181598",
-  "head_commit": "67bc08aa995e44aa0695cdc2e10575c3a34ef51d",
+  "base_commit": "12e04379cd5a9a2f150104a02c5761213f4be777",
+  "head_commit": "1f4302ef4a65b6927242771249682ad4f014816d",
   "pr_upstream": "https://github.com/ollama/ollama/pull/16195",
+  "current_scope": "conversion_docs",
   "sub_tracks": [
+    {
+      "id": "T-00",
+      "name": "Conversion and Documentation Support",
+      "status": "in_upstream_review",
+      "files": [
+        "convert/convert.go",
+        "convert/convert_lfm2.go",
+        "convert/convert_lfm2_test.go",
+        "convert/reader.go",
+        "convert/reader_safetensors.go",
+        "convert/reader_test.go",
+        "convert/convert_embeddinggemma.go",
+        "docs/capabilities/embeddings.mdx"
+      ],
+      "validation": [
+        "go test -count=1 ./cmd ./convert ./parser",
+        "find . -name '*.go' -not -path './app/*' -not -path './integration/*' -not -path './.git/*' -exec dirname {} \\; | sort -u | sed 's#^\\./#./#' | xargs go test -count=1"
+      ]
+    },
     {
       "id": "T-01",
       "name": "Tensor Name Fix",
-      "status": "complete",
+      "status": "historical",
       "file": "llama/llama.cpp/src/llama-model.cpp",
       "line": 6284,
       "change": "LLM_TENSOR_OUTPUT_NORM → LLM_TENSOR_OUTPUT_NORM_LFM2"
@@ -23,7 +43,7 @@
     {
       "id": "T-02",
       "name": "DENSE_2_OUT Addition",
-      "status": "complete",
+      "status": "historical",
       "file": "llama/llama.cpp/src/llama-arch.cpp",
       "line": 2042,
       "change": "Added LLM_TENSOR_DENSE_2_OUT to LFM2 expected tensor list"
@@ -31,21 +51,21 @@
     {
       "id": "T-03",
       "name": "Pooling Type Metadata",
-      "status": "in_progress",
+      "status": "deferred_separate_track",
       "blocked_by": "gguf writer does not support quantized tensor types (Q4_K, Q6_K)",
       "workaround": "Binary-patch GGUF file to insert lfm2.pooling_type=1 KV pair"
     },
     {
       "id": "T-04",
       "name": "ColBERT Per-Token Embeddings",
-      "status": "not_started",
+      "status": "deferred_separate_track",
       "description": "Add dense_2 forward pass in LFM2 Go model for per-token ColBERT embeddings"
     },
     {
       "id": "T-05",
       "name": "Upstream PR Submission",
-      "status": "in_progress",
-      "description": "PR #16195 submitted, awaiting review. T-02 needs separate PR."
+      "status": "in_upstream_review",
+      "description": "PR #16195 is open and mergeable with a focused conversion/docs diff."
     },
     {
       "id": "T-06",
