@@ -32,5 +32,5 @@ Implement Ollama conversion support for LFM2-ColBERT-350M style embedding models
 ## Key Artifacts
 - Branch: `feat/lfm2-embed-output-norm` on `edithatogo/ollama`
 - PR #16195: https://github.com/ollama/ollama/pull/16195
-- Current PR head: `1f4302ef4a65b6927242771249682ad4f014816d`
+- Current PR head: `4cb8d65b58e4a4c6f33793bb06a49fe5844c0578`
 - Handoff: `HANDOFF.md` (repo root)

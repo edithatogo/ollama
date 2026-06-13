@@ -12,7 +12,7 @@ PR:
 
 Current validated head:
 
-- `1f4302ef4a65b6927242771249682ad4f014816d`
+- `4cb8d65b58e4a4c6f33793bb06a49fe5844c0578`
 
 Rebase:
 
@@ -42,6 +42,13 @@ Fresh rerun on 2026-06-14:
 - Focused validation passed again.
 - Broad non-app package sweep passed again.
 - Only linker warnings were duplicate `-lc++` warnings from the local macOS toolchain.
+
+Follow-up cleanup validation on 2026-06-14:
+
+- Fixed LFM2 `fs.FS` metadata path handling to use slash-separated paths.
+- Clarified the LFM2-ColBERT docs to avoid implying `/api/embed` exposes token-level late-interaction embeddings.
+- Focused validation passed again.
+- A first broad sweep hit a timing timeout in `TestLlamaServerWaitUntilRunningExtendsTimeoutOnOutputActivity`; `go test -count=1 ./llm` passed on rerun, and a second broad non-app package sweep passed.
 
 Notes:
 
