@@ -150,3 +150,5 @@ Validation page upload commit:
 - `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/b2281f1b1c362e42a3d34546bd0ee55fe496e81f`
 - June 14 validation refresh:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/97ed641cb2c65f6a622c5280f0a87ae954666aaf`
+- June 14 README refresh to remove stale runtime validation command:
+  `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/da2f15fe7945d81f354f11f14ec918c1e675edbe`

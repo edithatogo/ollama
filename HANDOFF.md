@@ -163,7 +163,7 @@ Post-June-14 broad non-app package sweep also passed with the same command.
 Public documentation-only Hugging Face repo:
 
 - https://huggingface.co/edithatogo/ollama-colbert-local-artifacts
-- Current HF commit: `97ed641cb2c65f6a622c5280f0a87ae954666aaf`
+- Current HF commit: `da2f15fe7945d81f354f11f14ec918c1e675edbe`
 - Visibility: public
 - Gated: false
 - Files: `.gitattributes`, `README.md`, `artifact-manifest.md`, `github-links.md`, `status.md`, `validation.md`

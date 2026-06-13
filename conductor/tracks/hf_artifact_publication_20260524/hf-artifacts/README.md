@@ -44,13 +44,15 @@ GitHub remains the source of truth for code, review, branches, and pull requests
 The Ollama work is tracked in GitHub. See [validation.md](./validation.md) for the current post-rebase validation evidence. The key validation commands used for the code branch were:
 
 ```bash
-go test -count=1 ./cmd ./convert ./parser ./model/models/lfm2 ./llama
+go test -count=1 ./cmd ./convert ./parser
 find . -name '*.go' \
   -not -path './app/*' \
   -not -path './integration/*' \
   -not -path './.git/*' \
   -exec dirname {} \; | sort -u | sed 's#^\./#./#' | xargs go test -count=1
 ```
+
+As of the June 14 refresh, the upstream PR is a focused conversion/docs change. Older local runtime and GGUF metadata patching experiments are documented in the Conductor handoff, but they are not part of the current PR diff.
 
 ## Local BitNet Notes
 

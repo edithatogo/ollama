@@ -3,8 +3,8 @@
 ## Core Dependencies
 | Component | Version | Source |
 |-----------|---------|--------|
-| ollama | v0.25.0-rc0 (branch `feat/lfm2-embed-output-norm`) | edithatogo/ollama |
-| llama.cpp (vendored) | ec98e2002 | ggml-org/llama.cpp |
+| ollama | `ollama/ollama@12e04379c` plus PR branch `feat/lfm2-embed-output-norm` | edithatogo/ollama |
+| llama.cpp / runtime backend | Managed by current upstream Ollama tree | ollama/ollama |
 | ggml | Vendored with ollama | ggml-org/ggml |
 | Go | 1.26.3 | Homebrew |
 | CMake | 4.3.2 | Homebrew |
@@ -15,12 +15,15 @@
 - Metal GPU backend (Apple M1 Max GPU)
 
 ## Build System
-- Go build with CGo for C++ compilation
-- C++ files in `llama/llama.cpp/src/` compiled via CGo
-- Metal GPU acceleration via GGML backend
+- Current PR validation uses Go package tests for conversion and parser code.
+- The June 14 PR shape is conversion/docs-only and does not modify vendored runtime files.
+- Older CGo/runtime build notes are retained in the handoff as historical local-experiment context.
 
 ## Key Files Modified
 | File | Change | Track |
 |------|--------|-------|
-| `llama/llama.cpp/src/llama-model.cpp` | L6284: OUTPUT_NORM → OUTPUT_NORM_LFM2 | T-01 |
-| `llama/llama.cpp/src/llama-arch.cpp` | Added DENSE_2_OUT to LFM2 expected list | T-02 |
+| `convert/convert_lfm2.go` | LFM2-ColBERT conversion support | Current PR |
+| `convert/convert_lfm2_test.go` | conversion regression coverage | Current PR |
+| `convert/reader_safetensors.go` | nested safetensors path handling | Current PR |
+| `convert/convert_embeddinggemma.go` | nested dense-module compatibility | Current PR |
+| `docs/capabilities/embeddings.mdx` | embedding capability docs | Current PR |
