@@ -1,20 +1,32 @@
 # Implementation Plan
 
-## Phase 0: Foundation (✅ Complete)
+## Current Upstream Scope
+
+As of the June 14 refresh, upstream PR #16195 is a single focused conversion/docs commit at `1f4302ef4a65b6927242771249682ad4f014816d`. The older vendored runtime-file changes below are retained as historical context only because current `ollama/ollama:main` no longer tracks those files in that form.
+
+Active work is limited to:
+
+- Keeping PR #16195 rebased and review-ready.
+- Responding to upstream review comments.
+- Keeping the Hugging Face docs-only artifact/status pages current.
+
+GGUF metadata patching and per-token runtime experiments should happen on a separate branch/track if resumed.
+
+## Phase 0: Foundation (Historical)
 
 ### T-01: Tensor Name Fix
 - [x] Add `LLM_TENSOR_OUTPUT_NORM_LFM2` to expected tensor list (already existed)
 - [x] Change `create_tensor` call from `LLM_TENSOR_OUTPUT_NORM` to `LLM_TENSOR_OUTPUT_NORM_LFM2`
 - [x] Verify: `llama-arch.cpp:311` maps to `"token_embd_norm"`
 - [x] Build binary and verify error changes from `missing tensor 'output_norm'`
-- [x] Submit PR #16195 to ollama/ollama
+- [x] Submit the original PR #16195 to ollama/ollama
 
 ### T-02: DENSE_2_OUT Addition
 - [x] Add `LLM_TENSOR_DENSE_2_OUT` to LFM2 expected list at `llama-arch.cpp:2042`
 - [x] Commit and push to fork branch
-- [ ] Submit as separate PR to ollama/ollama
+- [ ] Superseded by the June 14 conversion/docs-only PR shape
 
-## Phase 1: Model Loading (🟡 In Progress)
+## Phase 1: Model Loading (Deferred / Separate Track)
 
 ### T-03: Pooling Type Metadata
 - [ ] Binary-patch Q4_K_M GGUF to insert `lfm2.pooling_type = 1`
@@ -23,7 +35,7 @@
 - [ ] Verify model shows capabilities: ["embedding"]
 - [ ] Test `/api/embed` returns valid embeddings
 
-## Phase 2: SOTA Features (⬜ Not Started)
+## Phase 2: SOTA Features (Deferred / Separate Track)
 
 ### T-04: ColBERT Per-Token Embeddings
 - [ ] Add `dense_2` linear layer to LFM2 Go model struct
@@ -32,10 +44,10 @@
 - [ ] Extend `/api/embed` response format for multi-vector
 - [ ] Test with MaxSim scoring (pylate or manual)
 
-## Phase 3: Polish (⬜ Not Started)
+## Phase 3: Polish (Current Review Maintenance)
 
 ### T-05: Upstream
-- [ ] Submit DENSE_2_OUT addition as PR to ollama/ollama
+- [x] Keep PR #16195 focused on conversion/docs support
 - [ ] Consider PR to ggml-org/llama.cpp for both fixes
 - [ ] Respond to PR #16195 review feedback
 
@@ -61,6 +73,6 @@ graph TD
 | Phase | Started | Completed | Notes |
 |-------|---------|-----------|-------|
 | Phase 0 | 2026-05-14 | 2026-05-19 | Both fixes committed |
-| Phase 1 | 2026-05-19 | — | Blocked by gguf writer limitation |
-| Phase 2 | — | — | Depends on Phase 1 |
-| Phase 3 | — | — | After Phase 1+2 |
+| Phase 1 | 2026-05-19 | — | Deferred out of the current upstream PR after June 14 rebase |
+| Phase 2 | — | — | Deferred out of the current upstream PR |
+| Phase 3 | 2026-06-14 | — | Current activity is review maintenance for PR #16195 and HF docs freshness |

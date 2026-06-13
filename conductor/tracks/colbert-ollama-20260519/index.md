@@ -4,20 +4,20 @@
 `colbert-ollama-20260519`
 
 ## Status
-🟡 In Progress
+🟡 In Upstream Review
 
 ## Summary
-Implement native support for the LFM2-ColBERT-350M model as an embedding model in ollama. This involves fixing two bugs in the C++ model loader (tensor name mismatch and missing expected tensor), adding pooling type metadata to the GGUF file, and optionally implementing per-token ColBERT late interaction embeddings.
+Implement Ollama conversion support for LFM2-ColBERT-350M style embedding models. The current upstream PR is a focused conversion/docs branch; older runtime tensor-loading and GGUF metadata experiments are retained here as historical context only.
 
 ## Sub-tracks
 
 | ID | Name | Status | Priority |
 |----|------|--------|----------|
-| T-01 | Tensor Name Fix (token_embd_norm → output_norm) | ✅ Complete | P0-MUST |
-| T-02 | DENSE_2_OUT Expected Tensor Addition | ✅ Complete | P0-MUST |
-| T-03 | Pooling Type Metadata Patching | 🟡 In Progress | P0-MUST |
-| T-04 | ColBERT Per-Token Embedding Forward Pass | ⬜ Not Started | P1-SHOULD |
-| T-05 | Upstream PR Submission & Merge | 🟡 In Progress | P0-MUST |
+| T-01 | Tensor Name Fix (token_embd_norm -> output_norm) | Historical | P0-MUST |
+| T-02 | DENSE_2_OUT Expected Tensor Addition | Historical | P0-MUST |
+| T-03 | Pooling Type Metadata Patching | Deferred / separate track | P0-MUST |
+| T-04 | ColBERT Per-Token Embedding Forward Pass | Deferred / separate track | P1-SHOULD |
+| T-05 | Upstream PR Submission & Merge | 🟡 In Review | P0-MUST |
 | T-06 | Build System & Testing Framework | ✅ Complete | P1-SHOULD |
 | T-07 | Documentation & Handoff | ✅ Complete | P2-COULD |
 
@@ -32,5 +32,5 @@ Implement native support for the LFM2-ColBERT-350M model as an embedding model i
 ## Key Artifacts
 - Branch: `feat/lfm2-embed-output-norm` on `edithatogo/ollama`
 - PR #16195: https://github.com/ollama/ollama/pull/16195
-- Built binary: `/tmp/ollama-final`
+- Current PR head: `1f4302ef4a65b6927242771249682ad4f014816d`
 - Handoff: `HANDOFF.md` (repo root)

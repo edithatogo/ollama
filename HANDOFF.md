@@ -20,32 +20,32 @@ Upstream Ollama PR:
 - State: open
 - Reviewer artifact note: https://github.com/ollama/ollama/pull/16195#issuecomment-4527936929
 
-The PR now covers the broader LFM2/ColBERT conversion and runtime path, not just the original two C++ tensor-loading fixes.
+The current PR is a focused conversion/docs change. It no longer carries the older vendored runtime-file edits because current `ollama/ollama:main` no longer tracks those files in that form.
 
 It includes:
 
-- LFM2 embedding model registration for `lfm2_embed` and `lfm2moe_embed`
+- LFM2 embedding model conversion registration for `lfm2_embed` and `lfm2moe_embed`
 - SentenceTransformers `modules.json` parsing for pooling, normalization, and dense projection metadata
 - nested safetensors discovery and tensor-name prefixing for module subdirectories such as `1_Dense/model.safetensors`
 - upload path preservation for directory-structured model inputs
-- optional LFM2 dense projection loading/application for ColBERT-style embedding heads
+- conversion support for LFM2 dense projection tensors used by ColBERT-style embedding heads
 - documentation for LFM2-ColBERT embedding behavior
 
-The original low-level fixes were:
+The original low-level fixes below are historical context from the earlier branch shape. They are not part of the current June 14 one-commit PR diff.
 
 ### Change 1: Tensor Name Fix
 - **File**: `llama/llama.cpp/src/llama-model.cpp`
 - **Change**: Line 6284: `LLM_TENSOR_OUTPUT_NORM` → `LLM_TENSOR_OUTPUT_NORM_LFM2`
 - **Purpose**: The LFM2 GGUF model stores its output norm tensor as `token_embd_norm.weight`. The llama.cpp loading code was looking for `output_norm.weight`. The `LLM_TENSOR_OUTPUT_NORM_LFM2` enum already existed (mapped to `"token_embd_norm"`) but was never wired up.
 - **Verification**: Error changed from `missing tensor 'output_norm'` → `done_getting_tensors: expected 149, got 148`
-- **Status**: included in PR https://github.com/ollama/ollama/pull/16195
+- **Status**: historical context only after the June 14 rebase.
 
 ### Change 2: DENSE_2_OUT Added to Expected List
 - **File**: `llama/llama.cpp/src/llama-arch.cpp`
 - **Change**: Added `LLM_TENSOR_DENSE_2_OUT` to the LFM2 architecture's expected tensor list
 - **Purpose**: The ColBERT model has a late interaction head projection tensor `dense_2.weight` that is not in the standard LFM2 expected tensor list. This causes `done_getting_tensors: expected 149, got 148`
 - **Note**: `LLM_TENSOR_DENSE_2_OUT` already maps to `"dense_2"` and is used by other architectures (e.g., `GEMMA_EMBEDDING`)
-- **Status**: included in PR https://github.com/ollama/ollama/pull/16195
+- **Status**: historical context only after the June 14 rebase.
 
 ## Repository Structure
 
@@ -123,7 +123,7 @@ curl http://localhost:11434/api/embed -d '{
 }'
 ```
 
-Current validation already run for the upstream PR branch:
+Historical validation from the earlier branch shape:
 
 ```bash
 go test -count=1 ./cmd ./convert ./parser ./model/models/lfm2 ./llama
@@ -140,7 +140,7 @@ Post-rebase focused validation passed on 2026-05-24:
 go test -count=1 ./cmd ./convert ./parser ./model/models/lfm2 ./llama
 ```
 
-Post-June-14 focused validation passed:
+Current June 14 focused validation passed:
 
 ```bash
 go test -count=1 ./cmd ./convert ./parser
@@ -163,10 +163,10 @@ Post-June-14 broad non-app package sweep also passed with the same command.
 Public documentation-only Hugging Face repo:
 
 - https://huggingface.co/edithatogo/ollama-colbert-local-artifacts
-- Current HF commit: `421e4a3002e372ecd029cff2628c4618c6925da7`
+- Current HF commit: `97ed641cb2c65f6a622c5280f0a87ae954666aaf`
 - Visibility: public
 - Gated: false
-- Files: `.gitattributes`, `README.md`, `artifact-manifest.md`, `github-links.md`
+- Files: `.gitattributes`, `README.md`, `artifact-manifest.md`, `github-links.md`, `status.md`, `validation.md`
 
 No model weights, GGUF files, or generated binaries were uploaded.
 
@@ -189,13 +189,9 @@ Current source metadata checks:
 
 ## Key Files to Edit Next
 
-1. **To fix pooling_type**: Binary-patch the Q4_K_M GGUF to add `lfm2.pooling_type = 1`
-   - Or use `gguf-new-metadata` to copy + Python to insert KV pair
-   - The GGUF format: header(24) → KV pairs → TI entries → tensor data
-
-2. **To add `dense_2.weight` forward pass**: Add the corresponding forward pass code in LFM2 model
-   - Currently in `model/models/lfm2/model.go` (Go-side, not needed for C++ runner)
-   - For C++ runner: add the tensor to the expected list in `llama-arch.cpp` (ALREADY DONE)
+1. **For upstream PR review**: respond to any maintainer comments on https://github.com/ollama/ollama/pull/16195 and keep the branch rebased if `ollama/ollama:main` moves materially.
+2. **For HF documentation**: rerun `conductor/tracks/hf_artifact_publication_20260524/refresh-status.sh --upload` when GitHub PR state or validation evidence changes.
+3. **For future local runtime experiments**: keep GGUF metadata patching or per-token ColBERT runtime work on a separate branch/track so the current upstream PR remains focused on conversion support.
 
 ## Contact / Upstream
 

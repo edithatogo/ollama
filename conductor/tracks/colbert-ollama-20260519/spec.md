@@ -1,5 +1,9 @@
 # Technical Specification
 
+## Current Status
+
+This specification records the original local runtime investigation. As of the June 14 refresh, upstream PR #16195 is a focused conversion/docs branch and does not modify the vendored runtime files listed below. Treat the `llama/llama.cpp` sections as historical context unless a new runtime track is opened.
+
 ## File Changes
 
 ### 1. `llama/llama.cpp/src/llama-model.cpp` (Line 6284)
