@@ -6,7 +6,7 @@ The current upstream code-review branch is `edithatogo/ollama:feat/lfm2-embed-ou
 
 Current pushed head:
 
-- `23300464acdd704e9cfd65b1ab3eef4d11cdd746`
+- `c65645b58f9c3fbec31af71ed3a508bf8d0124cb`
 - Rebasing note: branch was rebased onto `ollama/ollama@12e04379c` on 2026-06-14 and force-pushed with lease.
 - Local safety branch before rebase: `backup/feat-lfm2-embed-output-norm-pre-rebase`
 - Local safety branch before June 14 rebase: `backup/feat-lfm2-embed-output-norm-pre-rebase-20260614`
@@ -164,7 +164,7 @@ Post-June-14 broad non-app package sweep also passed with the same command.
 Public documentation-only Hugging Face repo:
 
 - https://huggingface.co/edithatogo/ollama-colbert-local-artifacts
-- Current HF commit: `844ea23cb9cbbc88045a1084e42be7d579160a2e`
+- Current HF commit: `cdf6706dbc557cdcb60e3a2024ae34a4db32a3ce`
 - Visibility: public
 - Gated: false
 - Files: `.gitattributes`, `README.md`, `artifact-manifest.md`, `github-links.md`, `status.md`, `validation.md`
@@ -208,7 +208,7 @@ Current repo checkouts on `/Volumes/PortableSSD/GitHub`:
 
 | Checkout | Branch | State |
 | --- | --- | --- |
-| `ollama` | `feat/lfm2-embed-output-norm` | Clean; pushed to `fork/feat/lfm2-embed-output-norm` at `23300464`; rebased onto current `origin/main`; upstream PR #16195 open and mergeable. |
+| `ollama` | `feat/lfm2-embed-output-norm` | Clean; pushed to `fork/feat/lfm2-embed-output-norm` at `c65645b58`; rebased onto current `origin/main`; upstream PR #16195 open and mergeable. |
 | `ollama-conductor-handoff` | `conductor/colbert-handoff` | Clean; pushed to `fork/conductor/colbert-handoff`; contains Conductor tracks and HF docs. |
 | `BitNet` | `local-bitnet-runner-wrapper` | Clean; points at the two fork-only local runner commits and is pushed to `fork/local-bitnet-runner-wrapper`. Local `main` has been restored to track `origin/main`. |
 | `BitNet-ignore-pr` | `ignore-generated-kernel-headers` | Clean; pushed to `fork/ignore-generated-kernel-headers`; upstream PR #563 open. |
