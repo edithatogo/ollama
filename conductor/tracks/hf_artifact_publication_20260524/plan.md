@@ -155,7 +155,9 @@ Validation page upload commit:
 - June 14 validation evidence rerun note:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/fcd6bf4f8909d3443797a3b1ccf6e43c922cce66`
 - June 14 GitHub cleanup: edited the superseded May 24 PR validation comment to point reviewers to the current June 14 validation comment.
-- June 14 PR cleanup: amended the Ollama PR head to `4cb8d65b58e4a4c6f33793bb06a49fe5844c0578` with an `fs.FS` path fix, conservative LFM2-ColBERT docs wording, focused validation, isolated `./llm` rerun, and a passing second broad non-app sweep.
+- June 14 PR cleanup: amended the Ollama PR head to `23300464acdd704e9cfd65b1ab3eef4d11cdd746` with an `fs.FS` path fix, conservative LFM2-ColBERT docs wording, focused validation, isolated `./llm` rerun, and a passing second broad non-app sweep.
 - June 14 validation upload for amended PR head:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/34241c2501e5fb7e7416322407f84b7705ebb013`
-- June 14 PR body refresh: updated the upstream PR body to list amended head `4cb8d65b58e4a4c6f33793bb06a49fe5844c0578` and the validation rerun note.
+- June 14 PR body refresh: updated the upstream PR body to list amended head `23300464acdd704e9cfd65b1ab3eef4d11cdd746` and the validation rerun note.
+- June 14 validation upload for duplicate tensor-name guard:
+  `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/844ea23cb9cbbc88045a1084e42be7d579160a2e`

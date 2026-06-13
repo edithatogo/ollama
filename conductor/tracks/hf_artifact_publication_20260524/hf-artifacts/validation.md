@@ -12,7 +12,7 @@ PR:
 
 Current validated head:
 
-- `4cb8d65b58e4a4c6f33793bb06a49fe5844c0578`
+- `23300464acdd704e9cfd65b1ab3eef4d11cdd746`
 
 Rebase:
 
@@ -47,6 +47,7 @@ Follow-up cleanup validation on 2026-06-14:
 
 - Fixed LFM2 `fs.FS` metadata path handling to use slash-separated paths.
 - Clarified the LFM2-ColBERT docs to avoid implying `/api/embed` exposes token-level late-interaction embeddings.
+- Added duplicate GGUF tensor-name detection across root and nested safetensors files after tensor-name replacement.
 - Focused validation passed again.
 - A first broad sweep hit a timing timeout in `TestLlamaServerWaitUntilRunningExtendsTimeoutOnOutputActivity`; `go test -count=1 ./llm` passed on rerun, and a second broad non-app package sweep passed.
 

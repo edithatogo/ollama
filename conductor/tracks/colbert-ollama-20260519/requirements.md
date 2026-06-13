@@ -9,7 +9,7 @@ As of the June 14 refresh, PR #16195 is scoped to LFM2-ColBERT conversion and do
 ### REQ-M00: Conversion Support
 - **Description**: Ollama must convert LFM2-ColBERT style SentenceTransformers checkpoints with nested module safetensors.
 - **Acceptance**: Conversion tests pass for LFM2 and nested dense-module safetensors handling.
-- **Current**: Implemented in the current one-commit PR at `4cb8d65b58e4a4c6f33793bb06a49fe5844c0578`.
+- **Current**: Implemented in the current one-commit PR at `23300464acdd704e9cfd65b1ab3eef4d11cdd746`.
 - **Status**: ✅ Complete / in upstream review
 
 ### REQ-M01: Model Loading

@@ -2,7 +2,7 @@
 
 ## Current Upstream Scope
 
-As of the June 14 refresh, upstream PR #16195 is a single focused conversion/docs commit at `4cb8d65b58e4a4c6f33793bb06a49fe5844c0578`. The older vendored runtime-file changes below are retained as historical context only because current `ollama/ollama:main` no longer tracks those files in that form.
+As of the June 14 refresh, upstream PR #16195 is a single focused conversion/docs commit at `23300464acdd704e9cfd65b1ab3eef4d11cdd746`. The older vendored runtime-file changes below are retained as historical context only because current `ollama/ollama:main` no longer tracks those files in that form.
 
 Active work is limited to:
 
