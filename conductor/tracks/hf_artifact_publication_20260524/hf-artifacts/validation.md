@@ -37,6 +37,12 @@ find . -name '*.go' \
   -exec dirname {} \; | sort -u | sed 's#^\./#./#' | xargs go test -count=1
 ```
 
+Fresh rerun on 2026-06-14:
+
+- Focused validation passed again.
+- Broad non-app package sweep passed again.
+- Only linker warnings were duplicate `-lc++` warnings from the local macOS toolchain.
+
 Notes:
 
 - `app/*` was excluded because the local checkout does not include the built app distribution.
