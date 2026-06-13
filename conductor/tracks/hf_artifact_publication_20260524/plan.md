@@ -147,3 +147,5 @@ Automation upload commit:
 Validation page upload commit:
 
 - `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/b2281f1b1c362e42a3d34546bd0ee55fe496e81f`
+- June 14 validation refresh:
+  `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/97ed641cb2c65f6a622c5280f0a87ae954666aaf`

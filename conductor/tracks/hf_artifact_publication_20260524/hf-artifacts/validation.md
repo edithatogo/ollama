@@ -1,6 +1,6 @@
 # Validation Evidence
 
-Last updated: 2026-05-24
+Last updated: 2026-06-14
 
 This page records validation evidence for the GitHub work referenced by this Hugging Face documentation repository. It does not represent an uploaded model artifact.
 
@@ -12,18 +12,19 @@ PR:
 
 Current validated head:
 
-- `c0f56ec5e17c70da0d0dd213369b608d7ece66d5`
+- `1f4302ef4a65b6927242771249682ad4f014816d`
 
 Rebase:
 
 - Rebasing target: `ollama/ollama:main`
-- Base commit: `275f122cd`
+- Base commit: `12e04379c`
 - Push method: `git push --force-with-lease fork feat/lfm2-embed-output-norm`
+- Current shape: one focused commit containing conversion/documentation support. Older vendored `llama/llama.cpp` path changes were dropped because current `main` no longer tracks those files.
 
 Focused validation passed:
 
 ```bash
-go test -count=1 ./cmd ./convert ./parser ./model/models/lfm2 ./llama
+go test -count=1 ./cmd ./convert ./parser
 ```
 
 Broad non-app package sweep passed:
@@ -44,7 +45,7 @@ Notes:
 
 Reviewer update comment:
 
-- https://github.com/ollama/ollama/pull/16195#issuecomment-4528401509
+- https://github.com/ollama/ollama/pull/16195#issuecomment-4698915854
 
 ## BitNet PR
 
@@ -76,4 +77,3 @@ Policy:
 - No GGUF files uploaded.
 - No generated binaries uploaded.
 - No third-party artifacts uploaded.
-

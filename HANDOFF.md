@@ -6,10 +6,11 @@ The current upstream code-review branch is `edithatogo/ollama:feat/lfm2-embed-ou
 
 Current pushed head:
 
-- `c0f56ec5e17c70da0d0dd213369b608d7ece66d5`
-- Rebasing note: branch was rebased onto `ollama/ollama@275f122cd` on 2026-05-24 and force-pushed with lease.
+- `1f4302ef4a65b6927242771249682ad4f014816d`
+- Rebasing note: branch was rebased onto `ollama/ollama@12e04379c` on 2026-06-14 and force-pushed with lease.
 - Local safety branch before rebase: `backup/feat-lfm2-embed-output-norm-pre-rebase`
-- Post-rebase validation comment: https://github.com/ollama/ollama/pull/16195#issuecomment-4528401509
+- Local safety branch before June 14 rebase: `backup/feat-lfm2-embed-output-norm-pre-rebase-20260614`
+- Post-rebase validation comment: https://github.com/ollama/ollama/pull/16195#issuecomment-4698915854
 
 Upstream Ollama PR:
 
@@ -138,6 +139,12 @@ Post-rebase focused validation passed on 2026-05-24:
 go test -count=1 ./cmd ./convert ./parser ./model/models/lfm2 ./llama
 ```
 
+Post-June-14 focused validation passed:
+
+```bash
+go test -count=1 ./cmd ./convert ./parser
+```
+
 Post-rebase broad non-app package sweep also passed on 2026-05-24:
 
 ```bash
@@ -147,6 +154,8 @@ find . -name '*.go' \
   -not -path './.git/*' \
   -exec dirname {} \; | sort -u | sed 's#^\./#./#' | xargs go test -count=1
 ```
+
+Post-June-14 broad non-app package sweep also passed with the same command.
 
 ## Hugging Face Artifact Track
 
@@ -201,7 +210,7 @@ Current repo checkouts on `/Volumes/PortableSSD/GitHub`:
 
 | Checkout | Branch | State |
 | --- | --- | --- |
-| `ollama` | `feat/lfm2-embed-output-norm` | Clean; pushed to `fork/feat/lfm2-embed-output-norm` at `c0f56ec5e`; rebased onto current `origin/main`; upstream PR #16195 open and mergeable. |
+| `ollama` | `feat/lfm2-embed-output-norm` | Clean; pushed to `fork/feat/lfm2-embed-output-norm` at `1f4302ef4`; rebased onto current `origin/main`; upstream PR #16195 open and mergeable. |
 | `ollama-conductor-handoff` | `conductor/colbert-handoff` | Clean; pushed to `fork/conductor/colbert-handoff`; contains Conductor tracks and HF docs. |
 | `BitNet` | `local-bitnet-runner-wrapper` | Clean; points at the two fork-only local runner commits and is pushed to `fork/local-bitnet-runner-wrapper`. Local `main` has been restored to track `origin/main`. |
 | `BitNet-ignore-pr` | `ignore-generated-kernel-headers` | Clean; pushed to `fork/ignore-generated-kernel-headers`; upstream PR #563 open. |
