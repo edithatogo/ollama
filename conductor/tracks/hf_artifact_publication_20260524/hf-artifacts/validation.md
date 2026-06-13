@@ -12,7 +12,7 @@ PR:
 
 Current validated head:
 
-- `c65645b58f9c3fbec31af71ed3a508bf8d0124cb`
+- `8d61f89f80b33a95e5669af3a8b7126b9c5df4ab`
 
 Rebase:
 
@@ -49,6 +49,7 @@ Follow-up cleanup validation on 2026-06-14:
 - Clarified the LFM2-ColBERT docs to avoid implying `/api/embed` exposes token-level late-interaction embeddings.
 - Added duplicate GGUF tensor-name detection across root and nested safetensors files after tensor-name replacement.
 - Switched EmbeddingGemma dense module handling onto the generic nested safetensors path so raw nested module tensor names are not emitted alongside renamed dense tensors.
+- Removed the now-unused extra tensor parser hook after nested safetensors parsing made it redundant.
 - Focused validation passed again.
 - A first broad sweep hit a timing timeout in `TestLlamaServerWaitUntilRunningExtendsTimeoutOnOutputActivity`; `go test -count=1 ./llm` passed on rerun, and a second broad non-app package sweep passed.
 

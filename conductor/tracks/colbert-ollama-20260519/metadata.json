@@ -9,7 +9,7 @@
   "repository": "edithatogo/ollama",
   "branch": "feat/lfm2-embed-output-norm",
   "base_commit": "12e04379cd5a9a2f150104a02c5761213f4be777",
-  "head_commit": "c65645b58f9c3fbec31af71ed3a508bf8d0124cb",
+  "head_commit": "8d61f89f80b33a95e5669af3a8b7126b9c5df4ab",
   "pr_upstream": "https://github.com/ollama/ollama/pull/16195",
   "current_scope": "conversion_docs",
   "sub_tracks": [

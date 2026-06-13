@@ -155,11 +155,14 @@ Validation page upload commit:
 - June 14 validation evidence rerun note:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/fcd6bf4f8909d3443797a3b1ccf6e43c922cce66`
 - June 14 GitHub cleanup: edited the superseded May 24 PR validation comment to point reviewers to the current June 14 validation comment.
-- June 14 PR cleanup: amended the Ollama PR head to `c65645b58f9c3fbec31af71ed3a508bf8d0124cb` with an `fs.FS` path fix, conservative LFM2-ColBERT docs wording, focused validation, isolated `./llm` rerun, and a passing second broad non-app sweep.
+- June 14 PR cleanup: amended the Ollama PR head to `8d61f89f80b33a95e5669af3a8b7126b9c5df4ab` with an `fs.FS` path fix, conservative LFM2-ColBERT docs wording, focused validation, isolated `./llm` rerun, and a passing second broad non-app sweep.
 - June 14 validation upload for amended PR head:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/34241c2501e5fb7e7416322407f84b7705ebb013`
-- June 14 PR body refresh: updated the upstream PR body to list amended head `c65645b58f9c3fbec31af71ed3a508bf8d0124cb` and the validation rerun note.
+- June 14 PR body refresh: updated the upstream PR body to list amended head `8d61f89f80b33a95e5669af3a8b7126b9c5df4ab` and the validation rerun note.
 - June 14 validation upload for duplicate tensor-name guard:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/844ea23cb9cbbc88045a1084e42be7d579160a2e`
 - June 14 validation upload for EmbeddingGemma nested-name fix:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/cdf6706dbc557cdcb60e3a2024ae34a4db32a3ce`
+- June 14 PR cleanup: amended the Ollama PR head to `8d61f89f80b33a95e5669af3a8b7126b9c5df4ab` to remove the now-unused extra tensor parser hook after focused and broad validation passed.
+- June 14 validation upload for extra tensor parser cleanup:
+  `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/ec653daae11a31ceda51fb1f6c274fea825d951f`
