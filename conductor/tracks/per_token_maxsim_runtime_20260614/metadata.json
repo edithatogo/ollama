@@ -1,0 +1,26 @@
+{
+  "track_id": "per_token_maxsim_runtime_20260614",
+  "type": "feature",
+  "status": "new",
+  "track_class": "future_runtime_support",
+  "current_state": "granular_future_track_defined",
+  "scope_boundary": "per-token ColBERT/MaxSim runtime support only; separate from Ollama conversion/docs PR #16195",
+  "repository": "edithatogo/ollama",
+  "created_at": "2026-06-14T00:00:00Z",
+  "updated_at": "2026-06-14T00:00:00Z",
+  "description": "Future runtime support for token-level ColBERT embeddings and MaxSim-ready scoring surfaces, kept separate from the current Ollama conversion/docs PR",
+  "dependencies": [
+    "native llama.cpp ColBERT architecture contract",
+    "token-level embedding API contract",
+    "MaxSim scoring ownership decision",
+    "license-safe reference fixtures"
+  ],
+  "completion_evidence": [
+    "runtime API contract",
+    "token-level output representation design",
+    "MaxSim scoring boundary decision",
+    "reference-output parity tests",
+    "server/client documentation"
+  ],
+  "publication_status": "future-track-not-started"
+}

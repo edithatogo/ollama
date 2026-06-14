@@ -213,7 +213,7 @@ Microsoft BitNet verification on 2026-06-14:
 
 1. **For upstream PR review**: respond to any maintainer comments on https://github.com/ollama/ollama/pull/16195 and keep the branch rebased if `ollama/ollama:main` moves materially.
 2. **For HF documentation**: rerun `conductor/tracks/hf_artifact_publication_20260524/refresh-status.sh --upload` when GitHub PR state or validation evidence changes.
-3. **For future local runtime experiments**: keep GGUF metadata patching or per-token ColBERT runtime work on a separate branch/track so the current upstream PR remains focused on conversion support.
+3. **For future local runtime experiments**: keep GGUF metadata patching or per-token ColBERT runtime work on a separate branch/track so the current upstream PR remains focused on conversion support. Per-token MaxSim runtime support is tracked separately at `conductor/tracks/per_token_maxsim_runtime_20260614/`.
 
 ## Contact / Upstream
 

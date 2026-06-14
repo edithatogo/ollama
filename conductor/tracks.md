@@ -6,6 +6,7 @@ This is the canonical track index for the consolidated Ollama Conductor workspac
 | --- | --- | --- | --- |
 | `colbert-ollama-20260519` | LFM2-ColBERT-350M Integration | In upstream review / handoff | Current upstream-oriented handoff track with requirements, design, contracts, plan, spec, and metadata. |
 | `hf_artifact_publication_20260524` | Hugging Face artifact publication | Complete / public docs-only | Published public docs-only HF repo with model card, artifact manifest, GitHub links, and source metadata checks. No weights uploaded. |
+| `per_token_maxsim_runtime_20260614` | Per-token MaxSim runtime support | Future track defined | Separate future runtime/API track for token-level ColBERT embeddings and MaxSim-ready retrieval behavior. Not part of PR #16195. |
 | `colbert_embed_support_20260513` | Native ColBERT Embedding Model Support for Ollama | Completed / archived | Earlier broad discovery and implementation plan, including Modelfile and upstream PR notes. |
 | `lfm2_colbert_support_20260516` | Native ColBERT support for LFM2-style models | Completed / archived | Focused loader fix track for LFM2 output norm and model loading validation. |
 
@@ -13,6 +14,7 @@ This is the canonical track index for the consolidated Ollama Conductor workspac
 
 - [Current handoff: `colbert-ollama-20260519`](./tracks/colbert-ollama-20260519/index.md)
 - [HF publication: `hf_artifact_publication_20260524`](./tracks/hf_artifact_publication_20260524/index.md)
+- [Future runtime: `per_token_maxsim_runtime_20260614`](./tracks/per_token_maxsim_runtime_20260614/index.md)
 - [Archived: `colbert_embed_support_20260513`](./tracks/colbert_embed_support_20260513/index.md)
 - [Archived: `lfm2_colbert_support_20260516`](./tracks/lfm2_colbert_support_20260516/index.md)
 
