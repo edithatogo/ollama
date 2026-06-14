@@ -165,7 +165,7 @@ Post-June-14 broad non-app package sweep also passed with the same command.
 Public documentation-only Hugging Face repo:
 
 - https://huggingface.co/edithatogo/ollama-colbert-local-artifacts
-- Current HF commit: `a567e9629059437bdc5897bdc4d00d6e65d6034e`
+- Current HF commit: `d8beb847fc429481bd138d04d3f9ceef07e71f46`
 - Visibility: public
 - Gated: false
 - Files: `.gitattributes`, `README.md`, `artifact-manifest.md`, `github-links.md`, `status.md`, `validation.md`
@@ -242,6 +242,7 @@ BitNet PR branch freshness check on 2026-06-14:
 - Branch is one commit ahead of `origin/main`
 - PR #563 is open and mergeable
 - `license/cla` check is passing
+- PR comment/review check on 2026-06-14 found no actionable comments, no line review comments, and no review threads. The only review entry is Copilot's non-actionable "wasn't able to review any files" note.
 
 Local branch upstreams are configured to the pushed fork branches:
 

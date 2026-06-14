@@ -173,3 +173,6 @@ Validation page upload commit:
 - June 14 PR review cleanup: resolved the outdated Copilot thread on the previous vendored `llama/llama.cpp/src/llama-model.cpp` diff and updated the current PR validation comment.
 - June 14 validation upload for PR review-thread cleanup:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/a567e9629059437bdc5897bdc4d00d6e65d6034e`
+- June 14 BitNet PR comment/review check: no actionable comments, no line review comments, and no review threads on `microsoft/BitNet#563`; Copilot's only review was non-actionable.
+- June 14 validation upload for BitNet PR comment/review check:
+  `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/d8beb847fc429481bd138d04d3f9ceef07e71f46`

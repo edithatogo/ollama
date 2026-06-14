@@ -86,6 +86,7 @@ Checks:
 - GitHub reported the PR as open and mergeable.
 - `license/cla` check passed.
 - Local wrapper binary `/Volumes/PortableSSD/GitHub/BitNet/bin/bitnet` is executable and responds to `--help`.
+- PR comment/review check on 2026-06-14 found no actionable comments, no line review comments, and no review threads. The only review entry is Copilot's non-actionable "wasn't able to review any files" note.
 
 ## Apple MLX Local Runtime
 
