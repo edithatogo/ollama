@@ -63,6 +63,12 @@ Reviewer update comment:
 
 - https://github.com/ollama/ollama/pull/16195#issuecomment-4698915854
 
+Review-thread cleanup on 2026-06-14:
+
+- Resolved the outdated Copilot thread on the previous `llama/llama.cpp/src/llama-model.cpp` diff.
+- GitHub reports the thread as both outdated and resolved.
+- No code change was required because the current rebased PR no longer touches the vendored runtime path; the current PR scope is conversion/docs only.
+
 ## BitNet PR
 
 PR:

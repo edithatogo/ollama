@@ -49,7 +49,8 @@ GGUF metadata patching and per-token runtime experiments should happen on a sepa
 ### T-05: Upstream
 - [x] Keep PR #16195 focused on conversion/docs support
 - [ ] Consider PR to ggml-org/llama.cpp for both fixes
-- [ ] Respond to PR #16195 review feedback
+- [x] Respond to current PR #16195 review feedback
+  - 2026-06-14: resolved the outdated Copilot review thread on the previous vendored `llama/llama.cpp/src/llama-model.cpp` diff and updated the current validation comment.
 
 ### T-06: Testing
 - [ ] Automated test for LFM2 model loading

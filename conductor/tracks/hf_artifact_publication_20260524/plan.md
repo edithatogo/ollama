@@ -170,3 +170,6 @@ Validation page upload commit:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/631328667ca84ada77be0c936d02fa82ec7cf62d`
 - June 14 local runtime validation upload for Apple MLX and BitNet checks:
   `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/b37ae2a91a573ad90ab58babd78e554d30b89bf3`
+- June 14 PR review cleanup: resolved the outdated Copilot thread on the previous vendored `llama/llama.cpp/src/llama-model.cpp` diff and updated the current PR validation comment.
+- June 14 validation upload for PR review-thread cleanup:
+  `https://huggingface.co/edithatogo/ollama-colbert-local-artifacts/commit/a567e9629059437bdc5897bdc4d00d6e65d6034e`

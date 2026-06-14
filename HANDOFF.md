@@ -13,6 +13,7 @@ Current pushed head:
 - Post-rebase validation comment: https://github.com/ollama/ollama/pull/16195#issuecomment-4698915854
 - PR body was updated on 2026-06-14 to match the current one-commit conversion/docs diff, remove stale runtime-file claims, and record the amended validated head plus validation rerun note.
 - The older May 24 validation comment was edited on 2026-06-14 to mark it superseded and point reviewers to the June 14 validation comment.
+- The outdated Copilot review thread on the previous vendored `llama/llama.cpp/src/llama-model.cpp` diff was resolved on 2026-06-14; GitHub marks it outdated and resolved.
 
 Upstream Ollama PR:
 
@@ -164,7 +165,7 @@ Post-June-14 broad non-app package sweep also passed with the same command.
 Public documentation-only Hugging Face repo:
 
 - https://huggingface.co/edithatogo/ollama-colbert-local-artifacts
-- Current HF commit: `b37ae2a91a573ad90ab58babd78e554d30b89bf3`
+- Current HF commit: `a567e9629059437bdc5897bdc4d00d6e65d6034e`
 - Visibility: public
 - Gated: false
 - Files: `.gitattributes`, `README.md`, `artifact-manifest.md`, `github-links.md`, `status.md`, `validation.md`
